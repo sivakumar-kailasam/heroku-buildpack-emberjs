@@ -27,6 +27,8 @@ module Buildpack::Commands
       puts fastboot
       puts prember
       puts fastboot && prember
+      puts ENV["HEROKU_DEPLOY_SKIP_FASTBOOT_DETECTION"]
+      puts ENV["HEROKU_DEPLOY_SKIP_FASTBOOT_DETECTION"] && fastboot
       puts "siva"
       buildpacks << "heroku/static" unless fastboot && prember
 
